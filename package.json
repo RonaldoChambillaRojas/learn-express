@@ -1,16 +1,25 @@
 {
   "name": "learn-express",
   "version": "1.0.0",
-  "description": "",
+  "description": "curso express.js",
+  "keywords": [],
+  "homepage": "https://github.com/RonaldoChambillaRojas/learn-express#readme",
+  "bugs": {
+    "url": "https://github.com/RonaldoChambillaRojas/learn-express/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RonaldoChambillaRojas/learn-express.git"
+  },
+  "license": "MIT",
+  "author": "Ronaldo Chambilla <ronaldochambillarojas@gmail.com>",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "express": "^5.1.0"
-  }
+  },
+  "devDependencies": {}
 }
