@@ -45,6 +45,20 @@ app.post('/form', (req, res) => {
     })
 })
 
+app.post('/api/data', (req, res) => {
+    const data = req.body;
+    if(!data || Object.keys(data) === 0){
+        return res.status(400).json({
+            error: 'No se emvio datos',
+        })
+    }
+
+    res.status(201).json({
+        message: 'Datos recibidos',
+        data
+    })
+})
+
 app.listen(PORT, () => {
     console.log(`Servidor: http://localhost:${PORT}`);
 })
