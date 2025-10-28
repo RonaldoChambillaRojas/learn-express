@@ -30,7 +30,19 @@ app.get('/search', (req, res) => {
 })
 
 app.get('/docs', (req, res) => {
-    res.send('This endpoint return docs')
+    res.send('This endpoint return docs');
+})
+
+app.post('/form', (req, res) => {
+    const name = req.body.name || 'anonimo';
+    const email = req.body.email || 'sin email'
+    res.json({
+        message: 'Datos entregados',
+        data:{ 
+            nombre: name,
+            email
+        }
+    })
 })
 
 app.listen(PORT, () => {
