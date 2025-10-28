@@ -29,6 +29,10 @@ app.get('/search', (req, res) => {
         `)
 })
 
+app.get('/docs', (req, res) => {
+    res.send('This endpoint return docs')
+})
+
 app.listen(PORT, () => {
     console.log(`Servidor: http://localhost:${PORT}`);
 })
