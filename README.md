@@ -32,4 +32,4 @@ El contenido se estructura para cubrir desde los fundamentos hasta las mejores p
 
 ### 💡 Enfoque
 
-Este repositorio enfatiza la **comprensión del ciclo de vida de una petición HTTP** d
+Este repositorio enfatiza la **comprensión del ciclo de vida de una petición HTTP** 
