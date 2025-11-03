@@ -35,7 +35,7 @@ app.get('/docs', (req, res) => {
 
 app.post('/form', (req, res) => {
     const name = req.body.name || 'anonimo';
-    const email = req.body.email || 'sin email'
+    const email = req.body.email || 'sin email';
     res.json({
         message: 'Datos entregados',
         data:{ 
