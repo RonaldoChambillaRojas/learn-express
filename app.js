@@ -1,5 +1,10 @@
 require('dotenv').config();
 const express = require('express');
+
+const fs = require('fs');
+const path = require('path');
+const userFilePath = path.join(__dirname, 'users.json')
+
 const app = express();
 
 app.use(express.json());
@@ -56,6 +61,20 @@ app.post('/api/data', (req, res) => {
     res.status(201).json({
         message: 'Datos recibidos',
         data
+    })
+})
+
+app.get('/users', (req, res) => {
+    fs.readFile(userFilePath, 'utf-8', (err, data) => {
+        if ( err ) {
+            return res.status(500).json({
+                error: 'Error conexion de datos.'
+            })
+        }
+
+        const users = JSON.parse(data);
+        res.json(users)
+
     })
 })
 
