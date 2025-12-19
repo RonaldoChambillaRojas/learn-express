@@ -28,7 +28,7 @@ app.get('/search', (req, res) => {
     const category = req.query.categoria || 'No espeficado';
 
     res.send(`
-        <h2>Resultado de busqueda:</h2>
+        <h2>Resultado de busquedas:</h2>
         <p>1: ${terms}</p>
         <p>2: ${category}</p>
         `)
