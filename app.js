@@ -12,6 +12,14 @@ app.use(express.urlencoded({ extended: true }))
 
 const PORT = process.env.PORT || 3000;
 
+/* 
+    ESTE METODO RECIVE DOS ARGUMENTOS
+
+    primero la direccion a la que respondera y luego recibe una funcion callback que resbe como 
+    argumentos req que hace referencia a la solicitud del usuario y res que ase referencia a la respuesta
+    que le daremos al usuario.
+*/
+
 app.get('/', (req, res) => {
     res.send(`
         <h1>El servidor esta corriendo en el puerto ${PORT}</h1>
