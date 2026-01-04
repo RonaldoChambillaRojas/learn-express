@@ -78,6 +78,7 @@ app.post('/api/data', (req, res) => {
 app.get('/users', (req, res) => {
     fs.readFile(userFilePath, 'utf-8', (err, data) => {
         if ( err ) {
+            // res.status().json: nos permite dar una respuesta mas personalizada
             return res.status(500).json({
                 error: 'Error conexion de datos.'
             })
