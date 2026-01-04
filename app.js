@@ -34,7 +34,8 @@ app.get('/users/:id', (req, res) => {
 app.get('/search', (req, res) => {
     const terms = req.query.termino || 'No espesificado';
     const category = req.query.categoria || 'No espeficado';
-
+// res.send: es un metodo del parametro res que nos permite dar como parametro la respuesta que deseamos 
+// a este endpoint
     res.send(`
         <h2>Resultado de busquedas:</h2>
         <p>1: ${terms}</p>
