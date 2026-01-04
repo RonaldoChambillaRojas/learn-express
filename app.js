@@ -60,6 +60,8 @@ app.post('/form', (req, res) => {
 })
 
 app.post('/api/data', (req, res) => {
+
+    // req.body: nos permite acceder al cuerpo de la peticion
     const data = req.body;
     if(!data || Object.keys(data) === 0){
         return res.status(400).json({
