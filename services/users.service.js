@@ -1,18 +1,53 @@
-const fs = require('fs/promises');
-const path = require('path');
+const { readUsers, writeUsers } = require('./users.repository');
 
-const userFilePath = path.join(__dirname, '..', 'users.json');
-
-const readUsers = async () => {
-    const data = await fs.readFile(userFilePath, 'utf-8');
-    return JSON.parse(data);
+const getAllUsers = async () => {
+    return await readUsers();
 };
 
-const writeUsers = async (users) => {
-    await fs.writeFile(userFilePath, JSON.stringify(users, null, 2));
+const getUserById = async (id) => {
+    const users = await readUsers();
+    return users.find(u => u.id === Number(id));
+};
+
+const createUser = async (name, email) => {
+    const users = await readUsers();
+
+    const newUser = {
+        id: Date.now(),
+        name,
+        email
+    };
+
+    users.push(newUser);
+    await writeUsers(users);
+    return newUser;
+};
+
+const updateUser = async (id, data) => {
+    const users = await readUsers();
+    const index = users.findIndex(u => u.id === Number(id));
+
+    if (index === -1) return null;
+
+    users[index] = { ...users[index], ...data };
+    await writeUsers(users);
+    return users[index];
+};
+
+const deleteUser = async (id) => {
+    const users = await readUsers();
+    const filtered = users.filter(u => u.id !== Number(id));
+
+    if (filtered.length === users.length) return false;
+
+    await writeUsers(filtered);
+    return true;
 };
 
 module.exports = {
-    readUsers,
-    writeUsers
+    getAllUsers,
+    getUserById,
+    createUser,
+    updateUser,
+    deleteUser
 };
