@@ -34,5 +34,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Servidor activo en http://localhost:${PORT}`);
+    console.log(`Servidor levantado en http://localhost:${PORT}`);
 });
